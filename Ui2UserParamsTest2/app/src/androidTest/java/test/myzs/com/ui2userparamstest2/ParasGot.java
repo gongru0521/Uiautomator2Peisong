@@ -4,7 +4,6 @@ import android.util.Log;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import static android.content.ContentValues.TAG;
@@ -18,12 +17,12 @@ public class ParasGot {
     AndroidCSVRW anto = new AndroidCSVRW();
     AllActions ac = new AllActions();
     //读取csv中的每行信息存放在list中
-    public  List<String[]> returnPub(String url) throws Exception {
+    public  List<String> returnPub(String url) throws Exception {
         System.out.println("从csv中获得参数:");
 
 
-        List<String[]> listtest=anto.ReadAnd(url);
-
+       // List<String[]> listtest=anto.ReadAnd(url);
+        List<String> listtest=anto.ReadAnd(url);
         return listtest;
     }
 
@@ -37,12 +36,12 @@ public class ParasGot {
     //获得所有的测试结果存储到List中
 
     public List<String> paragot(String url) throws Exception {
-        List<String[]> listparas = returnPub(url);
+        List<String> listparas = returnPub(url);
         //将list<String[]>转换为二维数组
 
-        String[][] arrays = ConversionType.strssToliststr(listparas);
-        List<String> llstr = ConversionType.arrayToList(arrays);
-        Collections.reverse(llstr);
+       // String[][] arrays = ConversionType.strssToliststr(listparas);
+      //  List<String> llstr = ConversionType.arrayToList(arrays);
+    //    Collections.reverse(listparas);
          List<String>  newlistresult=new ArrayList<>();
         String strline[]=new String[6];
         String ss;
@@ -50,14 +49,14 @@ public class ParasGot {
     //    String ls[]=new String[arrays.length];
 
 //从list中对字符串进行处理
-        Log.v(TAG, "arrays.size():" + arrays.length);
-        for (int ii = 0; ii < arrays.length; ii++) {
+        Log.v(TAG, "listparas.size():" + listparas.size());
+        for (int ii = 0; ii < listparas.size(); ii++) {
             Log.v(TAG, "开始读取第ii次:" + ii);
-            ss=llstr.get(ii);
+            ss=listparas.get(ii);
 
             //将字符串中字符进行分割成数组
             strline= ss.split(";");
-            Log.v(TAG, " llstr.get(ii):" + llstr.get(ii));
+           Log.v(TAG, " llstr.get(ii):" + listparas.get(ii));
 
 
             ll=actionresult( strline);

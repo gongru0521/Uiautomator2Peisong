@@ -72,7 +72,11 @@ public class ExampleInstrumentedTest extends UiAutomatorInstrumentationTestRunne
       // ud.runWatchers();
 
         Thread.sleep(3000);
-        ud.executeShellCommand("am start -n com.itsenpupulai.courierport/.activity.BeforeWelcomeActivity ");
+       // ud.executeShellCommand("am start -n com.itsenpupulai.courierport/.activity.BeforeWelcomeActivity ");
+        Intent intent = context.getPackageManager().getLaunchIntentForPackage("com.itsenpupulai.courierport");
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//starts the app
+        context.startActivity(intent);
         Thread.sleep(10000);
 
 
