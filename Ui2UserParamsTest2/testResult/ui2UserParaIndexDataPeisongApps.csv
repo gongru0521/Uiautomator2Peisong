@@ -1,0 +1,6 @@
+提供元素信息;哪种元素(text/resourceid/classname);动作信息(scroll、click、edit);断言信息判断;停留时间(毫秒);用例名称
+com.itsenpupulai.courierport:id/et_phone;resourceid;click;请输入手机号;1000;点击手机号编辑框
+com.itsenpupulai.courierport:id/et_phone;resourceid;edit;18638732236;1000;输入手机号
+backpress;true;backpress;null;1000;返回按钮
+android.widget.EditText;resourceid;click;请输入手机号;1000;点击手机号编辑框
+android.widget.EditText;resourceid;edit;18638732236;1000;输入手机号

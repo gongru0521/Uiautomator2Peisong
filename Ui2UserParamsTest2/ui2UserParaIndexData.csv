@@ -1,0 +1,2 @@
+提供元素信息;true or false;动作信息(scroll、click、edit);正确信息判断;停留时间(毫秒);用例名称
+android:id/list;true;scroll;更多应用;3000;SettingScroll

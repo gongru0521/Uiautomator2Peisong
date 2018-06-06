@@ -1,0 +1,8 @@
+提供元素信息;哪种元素(text/resourceid/classname);动作信息(scroll、click、edit);断言信息判断;停留时间(毫秒);用例名称
+android:id/list;resourceid;scroll;更多应用;3000;滑动设置列表1
+android:id/list;resourceid;scroll;更多应用;1000;滑动设置列表2
+更多应用;text;click;应用管理;1000;点击更多应用
+蚂蚁配送员;text;click;清除数据;1000;进入app设置页面
+清除数据;text;click;清除数据;1000;清楚应用缓存
+清除全部数据;text;click;要清除全部数据吗？;1000;确认是否清空数据
+确定;text;click;蚂蚁配送员;1000;清空app数据成功

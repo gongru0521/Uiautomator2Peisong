@@ -1,0 +1,3 @@
+provideres,trueorfalse,actionscrollclickedit,assertmessage,waittimes,casenames
+android:id/list,TRUE,scroll,更多应用,3000,scroll11111
+android:id/list,FALSE,scroll,更多应用,1000,scrol22222
