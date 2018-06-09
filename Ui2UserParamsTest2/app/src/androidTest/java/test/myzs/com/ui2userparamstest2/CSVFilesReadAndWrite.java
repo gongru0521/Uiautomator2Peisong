@@ -18,8 +18,8 @@ public class CSVFilesReadAndWrite {
 
     public static  List<String[]> readCSV() throws Exception {
 ////读取csv文件
-        FileToAndroid fto=new FileToAndroid();
-        fto.pushfile();
+     //   FileToAndroid fto=new FileToAndroid();
+     //   fto.pushfile();
        File csv1 = new File("/mnt/sdcard/test/docs/ui2UserParaIndexData.csv");
         /*
       //  try

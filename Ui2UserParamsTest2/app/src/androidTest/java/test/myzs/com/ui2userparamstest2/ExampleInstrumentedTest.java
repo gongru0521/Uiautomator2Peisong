@@ -28,6 +28,8 @@ public class ExampleInstrumentedTest extends UiAutomatorInstrumentationTestRunne
     public UiDevice ud= UiDevice.getInstance(instrument);
     AndroidCSVRW acs=new AndroidCSVRW();
     Context context = InstrumentationRegistry.getInstrumentation().getContext();
+    SaveLogcat slog=new SaveLogcat();
+
 
 
     @Before
@@ -37,7 +39,8 @@ public class ExampleInstrumentedTest extends UiAutomatorInstrumentationTestRunne
 
         //进入设置页面方法1
         //    ud.executeShellCommand("am start -n com.android.settings/.MainSettings ");
-
+       //     SaveLogcat slog=new SaveLogcat();
+      //      slog.getlogs();
 
 
     }
@@ -48,7 +51,8 @@ public class ExampleInstrumentedTest extends UiAutomatorInstrumentationTestRunne
     public void testcase001() throws Exception {
        // bw.testlocationwatcher();
        // ud.runWatchers();
-
+        //获得日志，启动日志线程
+          slog.start();
         //进入设置页面方法2
 
         Intent intent = context.getPackageManager().getLaunchIntentForPackage("com.android.settings");

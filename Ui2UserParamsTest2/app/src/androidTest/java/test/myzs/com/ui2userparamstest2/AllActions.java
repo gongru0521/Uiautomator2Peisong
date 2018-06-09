@@ -81,7 +81,23 @@ public class AllActions extends UiAutomatorInstrumentationTestRunner{
 
 
     }
+//封装text,resourceid,className等方法
+    public UiObject2 getelement(String res, String btest){
+          UiObject2 ugot=null;
+          switch(btest){
+              case "text":
+                  ugot=ud.findObject(By.text(res));
+                  break;
+              case "resourceid":
+                  ugot=ud.findObject(By.res(res));
+                  break;
 
+
+          }
+
+        return ugot;
+
+    }
     //滑动且测试结果获取
     public String scrolllist(String res, String btest,String actions,String mess,String times,String name) throws Exception {
         Log.v(TAG, "res;" + res);
@@ -128,13 +144,7 @@ public class AllActions extends UiAutomatorInstrumentationTestRunner{
     public String clickResult(String res, String btest,String actions,String mess,String times,String name) throws Exception{
         String allresult = null;
         //获取对象
-        UiObject2 umoresetting = null;
-        if(btest.equals("text")) {
-            umoresetting = ud.findObject(By.text(res));
-        }
-        if(btest.equals("resourceid")) {
-            umoresetting = ud.findObject(By.res(res));
-        }
+        UiObject2 umoresetting = getelement(res,btest);
 
         if(umoresetting!=null){
             Thread.sleep(1000);
@@ -159,13 +169,8 @@ public class AllActions extends UiAutomatorInstrumentationTestRunner{
     //Edit事件，往文本框中输入信息
     public String editResult(String res, String btest,String actions,String mess,String times,String name,String editstring) throws Exception{
         String allresult=null;
-       UiObject2 uedit=null;
-        if(btest.equals("text")) {
-            uedit=ud.findObject(By.text(res));
-        }
-        if(btest.equals("resourceid")) {
-            uedit=ud.findObject(By.res(res));
-        }
+       UiObject2 uedit=getelement(res,btest);
+
         if(uedit!=null){
             Thread.sleep(3000);
             uedit.setText(editstring);
